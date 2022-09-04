@@ -32,15 +32,17 @@
 
         <section class="paragraph">
             <h3>Animating SVG Objects</h3>
-            <p>(Click on an svg object to animate it)</p>
+            <p>(Use the checkbox to animate the svg objects)</p>
+            <input type="checkbox" id="anim" name="anim">
+            <label for="anim">Animate</label>
             <br><br>
             <svg width="1000" height="500">
                 <circle id="circle" cx="25" cy="25" r="22"
-                fill="yellow" stroke="orange" stroke-width="5" onclick="moveCircle()"/>
+                fill="yellow" stroke="orange" stroke-width="5"/>
                 <rect id="rect" x="10" y="100" width="30" height="30" 
-                fill="purple" onclick="moveRect()"/>
+                fill="purple"/>
                 <ellipse  id="ellipse" cx="70" cy="200" rx="70" ry="50" 
-                fill="teal" onclick="moveEllipse()"/>
+                fill="teal"/>
             </svg>
 
 
