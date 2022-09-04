@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- To make sure the website works responsively on both small and bigger devices -->
+        <title>Kazi's CS-529</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"> <!-- Figure out differences between different browsers and make them look same in all of them-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  
+        
+        <!-- Fonts that we will be using -->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Roboto+Slab:400,700&display=swap" rel="stylesheet"> 
+        
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+        <header>
+            
+            <!-- My Image -->
+            <div class="logo">
+                <img src="img/kazi.jfif" alt="">
+            </div>
+
+            <!-- Navbar and Items -->
+            <div class="nav">
+                <a href="index.html" class="nav__link">Home</a>
+                <a href="vis_review.html" class="nav__link">Vis Review</a>
+                <a href="svg.html" class="nav__link">SVG Animation</a>
+            </div>
+
+        </header>
+
+        <section class="paragraph">
+            <h3>Animating SVG Objects</h3>
+            <p>(Click on an svg object to animate it)</p>
+            <br><br>
+            <svg width="1000" height="500">
+                <circle id="circle" cx="25" cy="25" r="22"
+                fill="yellow" stroke="orange" stroke-width="5" onclick="moveCircle()"/>
+                <rect id="rect" x="10" y="100" width="30" height="30" 
+                fill="purple" onclick="moveRect()"/>
+                <ellipse  id="ellipse" cx="70" cy="200" rx="70" ry="50" 
+                fill="teal" onclick="moveEllipse()"/>
+            </svg>
+
+
+
+
+        </section>        
+        
+        <script src="js/index.js"></script>
+        
+    </body>
+</html>
