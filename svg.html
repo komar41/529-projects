@@ -32,16 +32,16 @@
 
         <section class="paragraph">
             <h3>Animating SVG Objects</h3>
-            <p>(Use the checkbox to animate the svg objects)</p>
+            <p> i) Use the checkbox to animate the svg objects. <br>ii) Click on the rectangle to change its color. <br>iii) Click on the circle to change its position. <br>iv) Click on the ellipse to make it disappear.</p>
             <input type="checkbox" id="anim" name="anim">
             <label for="anim">Animate</label>
             <br><br>
             <svg width="1000" height="500">
                 <circle id="circle" cx="25" cy="25" r="22"
-                fill="yellow" stroke="orange" stroke-width="5"/>
-                <rect id="rect" x="10" y="100" width="30" height="30" 
-                fill="purple"/>
-                <ellipse  id="ellipse" cx="70" cy="200" rx="70" ry="50" 
+                fill="yellow" stroke="orange" stroke-width="5" onclick="positionChange()"/>
+                <rect id="rect" x="10" y="80" width="50" height="50" 
+                fill="purple" onclick="colorChange()"/>
+                <ellipse  id="ellipse" cx="70" cy="200" rx="70" ry="50" onclick="disappear()" 
                 fill="teal"/>
             </svg>
 
