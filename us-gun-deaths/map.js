@@ -83,7 +83,7 @@ d3.csv("data/by_state.csv").then(data =>{
             // And then, .style("fill", d => color(rateById[d.id])) 
 
         })
-        .attr('opacity', 0.8)
+        .attr('opacity', 0.7)
         .on("mouseover", (event, d)=>{
             d = {
                 stname: d.stname,
