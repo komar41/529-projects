@@ -20,35 +20,57 @@
            <h2>Black Hat Vis</h2>
            <div class="about-me__body">
                 <img src="img/blackHat1.png" alt="">
-               <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, voluptatibus numquam, dolor quod, nemo vitae sunt delectus quia quisquam aut esse fuga nostrum atque a culpa! Assumenda eligendi suscipit tenetur?.</p>
-               <img src="img/blackHat2.png" alt="">
-               <p style="text-align: justify;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus corporis quibusdam deleniti similique ad consequatur fugit explicabo minima beatae soluta quam hic repellat officiis exercitationem fugiat, autem eaque modi. Cumque?</p>
+                <p style="text-align: justify;">
+                    At first, a choropleth map was created to visualize the distribution of US gun death violations accross all states. 
+                    This visulization resembles <b>black hat</b> vis as the distribution is not correctly represented by choosing only three classes for it (0-10, 10-50, More than 50). 
+                    The title above the map also enforces this falsified information. Also, there should have been a legend title.
+                </p>
+
+                <img src="img/blackHat2.png" alt="">
+                <p style="text-align: justify;">
+                    To visualize distribution of city scale, a bubble chart was overlayed on the map based on the lat-lng of each city. 
+                    The reason this visulization resembles <b>black hat</b> is because the circle sizes are misrepresentative of the death counts. There should have been appropriate normalization for it.
+                </p>
+
                <img src="img/blackHat3.png" alt="">
-               <p style="text-align: justify;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus corporis quibusdam deleniti similique ad consequatur fugit explicabo minima beatae soluta quam hic repellat officiis exercitationem fugiat, autem eaque modi. Cumque?</p>
+                <p style="text-align: justify;">
+                    To further see the distribution of death counts at city/state scale, a pie chart and a horizontal bar chart is generated when the user hovers over the map.
+                    Problem with the pie chart is that, there is no legend describing which part resembles what gender (male/female). Also, the exact number should also be embedded with the chart.
+                    The same problem lies with the bar chart for age distribution.
+                </p>
+                <br><br>
            </div>
-           <h2>White Hat Vis</h2>
+
            <div class="about-me__body">
-            <img src="img/WhiteHat1.png" alt="">
-           <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, voluptatibus numquam, dolor quod, nemo vitae sunt delectus quia quisquam aut esse fuga nostrum atque a culpa! Assumenda eligendi suscipit tenetur?.</p>
-           <img src="img/whiteHat2.png" alt="">
-           <p style="text-align: justify;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus corporis quibusdam deleniti similique ad consequatur fugit explicabo minima beatae soluta quam hic repellat officiis exercitationem fugiat, autem eaque modi. Cumque?</p>
-           <img src="img/WhiteHat3.png" alt="">
-           <p style="text-align: justify;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus corporis quibusdam deleniti similique ad consequatur fugit explicabo minima beatae soluta quam hic repellat officiis exercitationem fugiat, autem eaque modi. Cumque?</p>
-        </div>
+                <h2>White Hat Vis</h2>
+                <div class="about-me__body">
+                    <img src="img/WhiteHat1.png" alt="">
+                    <p style="text-align: justify;">
+                        To fix the issues, in black hat visualizations, more classes were used in the choropleth map that aptly represents the distribution of death accross different states. A legend title was added below the legend.
+                        Also the misrepresentative title was replaced with information on how to interact with the map.
+                        The bubble chart was fixed by using proper radius for the circles.
+                    </p>
+                    <img src="img/whiteHat2.png" alt="">
+                    <p style="text-align: justify;">
+                        Proper colors, legends and axes titles were added with the pie chart and horizontal bar chart to aptly represent the distributions based on age and gender.
+                        Also, a title was provided above the two charts displaying which state or city's information is represented in the charts and also the total death count.
+                    </p>
+                    <img src="img/WhiteHat3.png" alt="">
+                    <p style="text-align: justify;">
+                        Additionally, a bar chart was generated at the very bottom to show the death counts accross all the states in one place.
+                    </p>
+                </div>
+           </div>
+           
         <h3>Credits</h3>
-        <p style="text-align: justify;">This website was built using several Open Source components. The source code of these open source components along with license information can be found below. We acknowledge and are grateful to these developers for their contributions to the open source community. </p>
-            <p class="license">Sources: </p> 
-            <a style = "text-decoration: none;" href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML, </a>
-            <a style = "text-decoration: none;" href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS, </a>
-            <a style = "text-decoration: none;" href="https://www.javascript.com/">JavaScript, </a>
-            <a style = "text-decoration: none;" href="https://jquery.com">jQuery,</a>
-            <a style = "text-decoration: none;" href="https://developer.mozilla.org/en-US/docs/Web/SVG">SVG</a>
-            <br>
-            <p class="license">Credits: </p> 
-            <a class="license" style = "text-decoration: none;" href="https://github.com/whatwg/html/blob/main/LICENSE">HTML, </a>
+        <p>The visualizations were built using several Open Source components (Pandas, Javascript, HTML, CSS, SVG ,d3.js). <br>
+            Visualization inspirations from: 
+            <a href="https://bl.ocks.org/wboykinm/dbbe50d1023f90d4e241712395c27fb3">Bill Morris (Choropleth Map)</a>, 
+            <a href="https://d3-graph-gallery.com/pie.html">d3-graph-gallery</a>, 
+            <a href="https://github.com/academind/d3js-basics/tree/d3-demo-finished">Academind</a><br>
+            Also, thanks to: <a class="license" style = "text-decoration: none;" href="https://stackoverflow.com/">Stack Overflow</a>
+        </p>            
         </section>
-        </footer>
-        
-        
+
     </body>
 </html>
