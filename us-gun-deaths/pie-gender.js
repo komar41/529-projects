@@ -67,7 +67,8 @@ const drawPie = (data) =>{
     })
     .attr("transform", function(d) { return `translate(${arcGenerator.centroid(d)})`})
     .style("text-anchor", "middle")
-    .style("font-size", 15)
+    .style("font-size", 20)
+    .style("fill", "white")
 
     div_pie.transition()
         .duration(100)

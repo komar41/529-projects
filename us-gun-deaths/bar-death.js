@@ -1,4 +1,4 @@
-const MARGINS = {top: 40, bottom: 40}; // Keeping margins to make space for the axes
+const MARGINS = {top: 20, bottom: 40}; // Keeping margins to make space for the axes
 const CHART_WIDTH = 1800;
 const CHART_HEIGHT = 300 - MARGINS.top - MARGINS. bottom;
 
