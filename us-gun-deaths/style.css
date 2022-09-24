@@ -114,6 +114,15 @@ div.tooltip {
     min-width: 500px; */
 }
 
+#title-pie-bar {
+    position:absolute;
+    left: 1250px;
+    top: 100px;
+    /* min-width: 450px; */
+    /* 
+    min-width: 500px; */
+}
+
 .button {
     position: absolute;
     top:2%;

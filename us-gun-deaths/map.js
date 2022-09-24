@@ -138,6 +138,8 @@ var div_pie = d3.select('#pie-chart-div').style("opacity", "0");
 
 var div_barAge = d3.select('#bar-div').style("opacity", "0");
 
+var div_title = d3.select('#title-pie-bar').style("opacity", "0");
+
 let drawCityCircles = () => {
     svg
         .selectAll("circle")
