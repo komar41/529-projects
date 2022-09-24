@@ -41,6 +41,7 @@ const drawBarAge = (data) => {
         .call(d3.axisLeft(y))
         .style("font", "14px times")
 
+    // Actual Numbers on the horizontal bar chart. Here, I set it manually. But have to do it dynamically
     bar_svg
         .selectAll('.label') // Not there so we will create it based on the data
         .data(barAge_data, d => d.ageGroup)
@@ -58,6 +59,7 @@ const drawBarAge = (data) => {
         .classed('label', true)
         .style("font", "18px times");
 
+    // Positioning the label
     bar_svg.append("g")
         .append('text')
         .text('Age Distribution')
