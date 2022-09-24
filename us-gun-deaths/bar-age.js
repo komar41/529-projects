@@ -22,7 +22,6 @@ const drawBarAge = (data) => {
     // Add X axis
     // Adds new text everytime. Have to do exit here() **
     let maxVal = d3.max(barAge_data, d => +d.value)
-    let minVal = d3.min(barAge_data, d => +d.value)
 
     bar_svg.selectAll("*").remove();
 
