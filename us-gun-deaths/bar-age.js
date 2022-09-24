@@ -27,7 +27,7 @@ const drawBarAge = (data) => {
     bar_svg.selectAll("*").remove();
 
     const x = d3.scaleLinear()
-    .domain([minVal, maxVal]) // Have to make the domain responsive to data **
+    .domain([0, maxVal]) // Have to make the domain responsive to data **
     .range([ 0, width]);
 
     // Y axis
