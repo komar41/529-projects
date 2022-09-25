@@ -11,8 +11,6 @@ let bar_svg = d3.select("#bar-div")
   .append("g")
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-
-
 let barAge_data
 
 const drawBarAge = (data) => {
