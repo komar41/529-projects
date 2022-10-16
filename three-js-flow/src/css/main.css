@@ -11,7 +11,7 @@ body {
 }
 
 #description{
-    font-size: 10px;
+    font-size: 35px;
     text-decoration: none;
     color: #000000;
     /* margin-left: 20%; */
@@ -41,22 +41,18 @@ body {
   
   .slider::-webkit-slider-thumb {
     appearance: none;
-    width: 4px;
-    height: 4px;
+    width: 20px;
+    height: 20px;
     background: #07573a;
   }
   
   #my_dataviz{
     border: 0.5px dashed rgba(0, 0, 0, 0);
-    width:150px;
-    background-color: #53535a;
-    position: relative;
+    /* width:150px; */
     
-    right: 10%;
+    background-color: #53535a;
+    position: absolute;
+    top:20%;
+    right: 20%;
   }
 
-  .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-}

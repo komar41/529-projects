@@ -130,8 +130,8 @@ loadData('data/058.csv');
 
 
 const margin = {top: 10, right: 5, bottom: 0, left: 5},
-        width = 150 - margin.left - margin.right,
-        height = 150 - margin.top - margin.bottom;
+        width = 460 - margin.left - margin.right,
+        height = 400 - margin.top - margin.bottom;
 
 
 const svg = d3.select("#my_dataviz")
@@ -174,7 +174,7 @@ function draw2D(data2D){
     .append('circle')
         .attr("cx", function (d) { return scaleX(d.X); } )
         .attr("cy", function (d) { return scaleY(d.Y); } )
-        .attr("r", 1)
+        .attr("r", 4)
         .style("fill", function(d){ return colorScale(d.C)})
 
 }
