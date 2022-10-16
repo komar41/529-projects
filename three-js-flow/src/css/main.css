@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Legend Font Style */
+body {
+	font: 11px sans-serif;
+	background-color: #ffffff;
+}
+
+#description{
+    font-size: 10px;
+    text-decoration: none;
+    color: #000000;
+    /* margin-left: 20%; */
+    text-align: center;
+}
+
+.scene{
+    border: 0.5px solid rgba(0, 0, 0, 0.402);
+}
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+  }
+  
+  /* The slider itself */
+  .slider {
+    appearance: none;
+    width: 50%; /* Full-width */
+    height: 2px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    opacity: 0.7;
+  }
+  
+  .slider:hover {
+    opacity: 1; 
+  }
+  
+  .slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 4px;
+    height: 4px;
+    background: #07573a;
+  }
+  
+  #my_dataviz{
+    border: 0.5px dashed rgba(0, 0, 0, 0);
+    width:150px;
+    background-color: #53535a;
+    position: relative;
+    
+    right: 10%;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
