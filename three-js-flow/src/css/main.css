@@ -11,6 +11,7 @@ body {
 }
 
 #description{
+  position: relative;
     font-size: 35px;
     text-decoration: none;
     color: #000000;
@@ -18,18 +19,47 @@ body {
     text-align: center;
 }
 
+.grid-container{
+  position: relative;
+}
+
 .scene{
-    border: 0.5px solid rgba(0, 0, 0, 0.402);
+  position: absolute;
+  top: 10px;
+  left: 150px;
+  width: 1000px;
+  height: 900px;
+  border: 2px solid rgb(109, 10, 10);
+  border-radius: 50px;
+}
+
+#my_dataviz{
+  position:absolute;
+  top: 150px;
+  left: 1150px;
+  display:inline-block;
+  border: 0.5px dashed rgba(0, 0, 0, 0);
+  /* height: 200px;
+  width:400px; */
+  border: 2px solid rgb(109, 10, 10);
+  border-radius: 25px;
+  background-color: #53535a;
+  /* position: absolute; */
+  /* top:20%;
+  right: 20%; */
 }
 
 .slidecontainer {
-    width: 100%; /* Width of the outside container */
+    position: absolute;
+    left: 120px;
+    top: 870px;
+     /* Width of the outside container */
   }
   
   /* The slider itself */
   .slider {
     appearance: none;
-    width: 50%; /* Full-width */
+    width: 950px;
     height: 4px; /* Specified height */
     background: #d3d3d3; /* Grey background */
     opacity: 0.7;
@@ -43,21 +73,15 @@ body {
     appearance: none;
     width: 20px;
     height: 20px;
-    background: #07573a;
+    background: #a70808;
   }
   
-  #my_dataviz{
-    border: 0.5px dashed rgba(0, 0, 0, 0);
-    /* width:150px; */
-    
-    background-color: #53535a;
-    position: absolute;
-    top:20%;
-    right: 20%;
-  }
+
 
   .button {
-    
+    position: absolute;
+    top: 900px;
+    left: 510px;
     background-color: #53535a;
     color: #fff;
     border:none; 
@@ -69,7 +93,16 @@ body {
     font-size: 18px;
   }
 
+  .header-instruction{
+    position: absolute;
+    top: 720px;
+    left: 220px;
+    font-size: 20px;
+  }
   .instruction{
+    position: absolute;
+    top: 730px;
+    left: 200px;
     font-size: 15px;
     text-decoration: none;
     color: #000000;

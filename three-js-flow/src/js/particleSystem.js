@@ -110,9 +110,9 @@ const loadData = (file) => {
         // TODO: Remove after the data has been rendered
         // createCylinder()
         // create the particle system
-        colorScale = d3.scaleLinear()
+        colorScale = d3.scaleSequential()
             .domain([bounds.minC, bounds.maxC])
-            .range(['#ffffcc','#006837'])
+            .interpolator(d3.interpolateReds);
 
         particleGeometry = new THREE.BufferGeometry;
         posArray = new Float32Array(data.length*3);
@@ -162,8 +162,9 @@ function draw2D(data2D){
     // Add Y axis
     const scaleY = d3.scaleLinear()
     .domain([bounds.minY, bounds.maxY])
-    .range([ height, 0]);
+    .range([ height, -170]); // Manually used -170 because of having a weird issue
 
+    console.log(bounds.maxY, scaleY(bounds.maxY))
     // Add dots
     svg.append('g')
     .selectAll("circle")

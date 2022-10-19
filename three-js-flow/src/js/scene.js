@@ -14,8 +14,8 @@ scene.add(light);
 
 // Sizes
 const sizes = {
-    width: window.innerWidth * 0.45,
-    height: window.innerHeight * 0.75
+    width: 900,
+    height: 700
 };
 
 
