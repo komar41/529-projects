@@ -1,9 +1,9 @@
 var data = [];
-let zValues, plane, updateZ
+let plane
 let lastNum = 0
 var slider = document.getElementById("myRange");
 let colorScale
-// var colors = [];
+let particleGeometry, posArray, colors
 
 // bounds of the data
 const bounds = {};
@@ -26,61 +26,51 @@ const createCylinder = () => {
 };
 
 // creates the particle system
-const createParticleSystem = (data) => {
+const createParticleSystem = (sVal, rem = false, colorAll = false) => {
 
-    console.log(bounds.minY)
-    // console.log(bounds.maxC)
-    colorScale = d3.scaleLinear()
-        .domain([bounds.minC, bounds.maxC])
-        .range(['#ffffcc','#006837'])
-
-    const particleGeometry = new THREE.BufferGeometry;
-    // console.log(data.length)
-    const posArray = new Float32Array(data.length*3);
-    const colors = new Float32Array(data.length*3);
+    if(rem) scene.remove(particlesMesh)
 
     var color = new THREE.Color();
 
     let j = 0
     for (let i=0; i<data.length; i++){
-        // console.log(data[i])
         posArray[j] = data[i].X
         posArray[j+1] = data[i].Y
         posArray[j+2] = data[i].Z
         color.set(colorScale(data[i].concentration))
 
-        // console.log(color.g)
-        // colors.push(color.r, color.g, color.b)
-        colors[j] = color.r
-        colors[j+1] = color.g
-        colors[j+2] = color.b
-
+        if(colorAll){
+            colors[j] = color.r
+            colors[j+1] = color.g
+            colors[j+2] = color.b
+        }
+        else{
+            if(posArray[j+2].toFixed(2) == sVal){
+                colors[j] = color.r
+                colors[j+1] = color.g
+                colors[j+2] = color.b
+            }
+            else{
+                colors[j] = 0.6
+                colors[j+1] = 0.6
+                colors[j+2] = 0.6
+            }
+        }
         j = j + 3
     }
 
-    // console.log(posArray)
     particleGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
     particleGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-    console.log(particleGeometry)
 
     const particleMaterial = new THREE.PointsMaterial( { 
         vertexColors: true,
-        size: 0.05, 
-        opacity: 0.7, 
+        size: 0.07, 
+        opacity: 0.9, 
         transparent: true 
     } );
 
     particlesMesh = new THREE.Points(particleGeometry, particleMaterial)
     scene.add(particlesMesh)
-
-    const geometry = new THREE.PlaneGeometry( 12, 12 , 7, 7);
-    const material = new THREE.MeshBasicMaterial( {color: 0xa6a6a6, side: THREE.DoubleSide, opacity: 0.3, transparent: true, wireframe: true} );
-    plane = new THREE.Mesh( geometry, material );
-    // plane.rotation.x = Math.PI / 2;
-    // plane.translateZ(0)
-    scene.add( plane );
-
-    sliderInput(0)
 };
 
 const loadData = (file) => {
@@ -120,7 +110,23 @@ const loadData = (file) => {
         // TODO: Remove after the data has been rendered
         // createCylinder()
         // create the particle system
-        createParticleSystem(data);
+        colorScale = d3.scaleLinear()
+            .domain([bounds.minC, bounds.maxC])
+            .range(['#ffffcc','#006837'])
+
+        particleGeometry = new THREE.BufferGeometry;
+        posArray = new Float32Array(data.length*3);
+        colors = new Float32Array(data.length*3);
+
+        const geometry = new THREE.PlaneGeometry( 12, 12 , 7, 7);
+        const material = new THREE.MeshBasicMaterial( {color: 0xffffff, side: THREE.DoubleSide, opacity: 0.3, transparent: true, wireframe: true} );
+        plane = new THREE.Mesh( geometry, material );
+        // plane.rotation.x = Math.PI / 2;
+        // plane.translateZ(0)
+        scene.add( plane );
+
+        createParticleSystem(0, false, true);
+        // sliderInput(0);
     })
 
 
@@ -147,12 +153,6 @@ function draw2D(data2D){
 
     svg.selectAll("*").remove();
 
-    
-    // let maxX = d3.max(data2D, d => +d.X)
-    // let maxY = d3.max(data2D, d => +d.Y)
-    // let minX = d3.min(data2D, d => +d.X)
-    // let minY = d3.min(data2D, d => +d.Y)
-
     // // Add X axis
     const scaleX = d3.scaleLinear()
     .domain([bounds.minX, bounds.maxX])
@@ -163,8 +163,6 @@ function draw2D(data2D){
     const scaleY = d3.scaleLinear()
     .domain([bounds.minY, bounds.maxY])
     .range([ height, 0]);
-    
-    // console.log(bounds.minX, minX, 'haha')
 
     // Add dots
     svg.append('g')
@@ -174,7 +172,7 @@ function draw2D(data2D){
     .append('circle')
         .attr("cx", function (d) { return scaleX(d.X); } )
         .attr("cy", function (d) { return scaleY(d.Y); } )
-        .attr("r", 4)
+        .attr("r", 3)
         .style("fill", function(d){ return colorScale(d.C)})
 
 }
@@ -184,9 +182,12 @@ slider.oninput = function() {
     sliderInput(this.value)
 }
 
+function showAll(){
+    createParticleSystem(0, true, true);
+}
+
 function sliderInput(value){
     plane.position.z = value
-    // console.log(this.value, plane.position)
 
     let data2D = []
     data.map(
@@ -197,7 +198,6 @@ function sliderInput(value){
             }
         }
     );
+    createParticleSystem(value, true, false);
     draw2D(data2D)
-    console.log(value)
-    console.log(data2D)
 }

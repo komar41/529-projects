@@ -34,7 +34,17 @@
 
         <div class="slidecontainer">
                 <input type="range" min="-5" max="5" value="0" class="slider" id="myRange" step="0.01">
+                <br><br>
+                <button class="button" onclick="showAll()" >Color All Particles</button>
         </div>
+
+        <ul class="instruction">
+                <li>Press and hold left click on the mouse and drag left, right, up or down to rotate the cylinder.</li>
+                <li>Use the trackpad to zoom in/zoom out.</li>
+                <li>The particles colored according to their concentration value.</li>
+                <li>Use the slider to move the plane along Z-axis and filter particles according to the Z-value.</li>
+                <li>Click on "Color All Particles" button to show all particles.</li>
+        </ul>        
         
         <script defer src="src/js/scene.js"></script>
         <script defer src="src/js/particleSystem.js"></script>

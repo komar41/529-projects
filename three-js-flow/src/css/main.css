@@ -30,7 +30,7 @@ body {
   .slider {
     appearance: none;
     width: 50%; /* Full-width */
-    height: 2px; /* Specified height */
+    height: 4px; /* Specified height */
     background: #d3d3d3; /* Grey background */
     opacity: 0.7;
   }
@@ -56,3 +56,23 @@ body {
     right: 20%;
   }
 
+  .button {
+    
+    background-color: #53535a;
+    color: #fff;
+    border:none; 
+    text-align: center;
+    border-radius:10px; 
+    padding:15px;
+    min-height:30px; 
+    min-width: 120px;
+    font-size: 18px;
+  }
+
+  .instruction{
+    font-size: 15px;
+    text-decoration: none;
+    color: #000000;
+    /* margin-left: 20%; */
+    /* text-align: center; */
+}
