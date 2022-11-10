@@ -1,0 +1,57 @@
+#spiderViz {
+    position: absolute;
+    /* left: 0px; */
+    top: 50px;
+}
+
+.buttonAddP {
+    position: absolute;
+    top: 40px;
+    right: 70px;
+    /* margin-top: 10px; */
+    background-color: #3e8e41;
+    color: #fff;
+    border: none;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    /* min-height:30px; 
+    min-width: 120px; */
+    font-size: 15px;
+}
+
+.buttonAddP:hover {
+    background-color: #37b73c
+}
+
+.buttonAddP:active {
+    background-color: #37b73c;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.buttonRemP {
+    position: absolute;
+    right: 5px;
+    top: 40px;
+    /* margin-top: 10px; */
+    background-color: #b32727;
+    color: #fff;
+    border: none;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    /* min-height:30px; 
+    min-width: 120px; */
+    font-size: 15px;
+}
+
+.buttonRemP:hover {
+    background-color: #da2626
+}
+
+.buttonRemP:active {
+    background-color: #da2626;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
